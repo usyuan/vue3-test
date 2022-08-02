@@ -17,10 +17,19 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
   </header>
 
-  <RouterView />
+  <div class="menu">
+    <aside>
+      <RouterLink to="/EventHandling">事件處理</RouterLink>
+      <RouterLink to="/Watchers">監聽器</RouterLink>
+    </aside>
+    <main>
+      <RouterView />
+    </main>
+
+  </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -33,7 +42,7 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   margin: 2rem 0;
 }
@@ -56,10 +65,28 @@ nav a:first-of-type {
   border: 0;
 }
 
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  aside {
+    padding: 5px;
+    height: 80vh;
+    border-right: 1px solid #ccc;
+    a {
+      display: block;
+    }
+  }
+  main {
+    padding: 1rem;
+  }  
+}
+
+
+
 @media (min-width: 1024px) {
   header {
-    /* display: flex;
-    place-items: center; */
+    display: flex;
+    place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
 

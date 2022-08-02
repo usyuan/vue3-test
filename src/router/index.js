@@ -20,7 +20,19 @@ const router = createRouter({
     {
       path: '/practise',
       name: 'practise',
-      component: () => import('../views/PractiseView.vue')
+      component: () => import('../views/EventHandling.vue')
+    },
+    // 事件處理
+    {
+      path: '/EventHandling',
+      name: 'EventHandling',
+      component: () => import('../views/EventHandling.vue')
+    },
+    // 監聽器
+    {
+      path: '/Watchers',
+      name: 'Watchers',
+      component: () => import('../views/Watchers.vue')
     },
 
   ]
